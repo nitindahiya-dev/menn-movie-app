@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
 const NavbarItem = ({ title, param }) => {
+  // Check if searchParams is null before accessing its properties
   const searchParams = useSearchParams();
-  const genre = searchParams.get('genre');
+  const genre = searchParams ? searchParams.get('genre') : null;
 
   return (
     <div>
